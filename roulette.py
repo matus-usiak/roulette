@@ -62,6 +62,6 @@ while credit > 0:
         i = i + 1
     print("Total winning: ", winningamount)
     print("total bet ", totalbet)
-    # haha
+    # hahaha
 else:
     print("No credit")
