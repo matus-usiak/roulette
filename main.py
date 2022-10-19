@@ -18,10 +18,8 @@ while credit > 0:
         bettypelist.append(bt.split(" ")[0])
         betamountlist.append(bt.split(" ")[1])
 
-    totalbet = sum(map(int, betamountlist))
-
     spinresult = int(random.randint(0, 36))
-    # spinresult = 5
+
     print("Spin result: ", spinresult)
 
     redspaces = [1, 3, 5, 7, 9, 12, 14, 16, 18, 19, 21, 23, 25, 27, 30, 32, 34, 36]
@@ -45,15 +43,14 @@ while credit > 0:
 
     i = 0
     while i < len(betlist):
-        print("Pay for: ", betlist[i].split(" ")[0] in spinresultlist)
 
-        if bettypelist[i] in ["red", "black", "even", "odd", "1to18", "19to36"]:
+        if bettypelist[i] in spinresultlist:
             winningamount = winningamount + int(betamountlist[i]) + (int(betamountlist[i]) * 2)
 
-        if spinresultlist[0] in betlist[i].split(" ")[0]:  #WORKS
+        if spinresultlist[0] in betlist[i].split(" ")[0]:  # WORKS
             winningamount = winningamount + int(betamountlist[i]) + (int(betamountlist[i]) * 35)
 
-        if bettypelist[i] not in spinresultlist: #WORKS
+        if bettypelist[i] not in spinresultlist:  # WORKS
             winningamount = winningamount - int(betamountlist[i])
 
         i = i + 1
